@@ -1,7 +1,7 @@
 // Example model schema from the Drizzle docs
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
-import {pgTableCreator,} from "drizzle-orm/pg-core";
+import {integer, pgTableCreator, serial, text} from "drizzle-orm/pg-core";
 import {env} from "@/env";
 
 /**
@@ -13,8 +13,36 @@ import {env} from "@/env";
 
 const envName = env.NODE_ENV;
 export const createTable = pgTableCreator(
-    (name) => `${envName}_portfolio_${name}`,
+  (name) => `${envName}_portfolio_${name}`,
 );
 
+export const Skills = createTable("skills", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  level: integer("level").notNull(),
+  description: text("description").notNull(),
+  link: text("link"),
+});
 
-// todo
+export const Certifications = createTable("certifications", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  issuer: text("issuer").notNull(),
+  date: text("date").notNull(),
+  link: text("link"),
+  description: text("description"),
+});
+
+export const Cases = createTable("cases", {
+  id: serial("id").primaryKey(),
+  title: text("title"),
+  description: text("description"),
+});
+
+export const Testimonials = createTable("testimonials", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  title: text("title"),
+  link: text("link"),
+  content: text("content").notNull(),
+});

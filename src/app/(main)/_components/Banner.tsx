@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import profileImage from "./profile.png";
 
 export default function Banner() {
   return (
@@ -21,7 +23,7 @@ export default function Banner() {
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Link
-                href="#"
+                href="/hireme"
                 className="inline-flex h-10 items-center justify-center rounded-md bg-[#e91e63] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#c2185b] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c2185b] disabled:pointer-events-none disabled:opacity-50 dark:bg-[#f48fb1] dark:text-[#1a1a1a] dark:hover:bg-[#f48fb1] dark:focus-visible:ring-[#f48fb1]"
                 prefetch={false}
               >
@@ -29,10 +31,8 @@ export default function Banner() {
               </Link>
             </div>
           </div>
-          <img
-            src="/placeholder.svg"
-            width="550"
-            height="550"
+          <Image
+            src={profileImage}
             alt="Hero"
             className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last lg:aspect-square"
           />
