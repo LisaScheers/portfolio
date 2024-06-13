@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import posthog from "posthog-js";
 
 const contactFormSchema = z.object({
   name: z.string({ message: "Invalid name" }).min(2, "Name is too short"),
@@ -33,6 +34,10 @@ export default function ContactForm() {
     }
 
     const token = await executeRecaptcha("contact");
+    posthog.capture("contact_form_submitted", {
+      name: values.name,
+      email: values.email,
+    });
 
     await submitContactRequest({ ...values, token });
   }
