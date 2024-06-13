@@ -8,9 +8,6 @@ export default function Testimonials() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg px-3 py-1 text-sm text-[#e91e63]">
-              Testimonials
-            </div>
             <h2 className="text-3xl font-bold tracking-tighter text-[#e91e63] sm:text-5xl">
               What Clients Say
             </h2>
