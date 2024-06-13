@@ -6,6 +6,7 @@ import { CSPostHogProvider } from "@/components/PosthogProvider";
 export const metadata = {
   title: "Lisa's Portfolio",
   description: "Lisa's Portfolio",
+  metadataBase: new URL("https://sheers.tech/"),
   openGraph: {
     title: "Lisa's Portfolio",
     description: "Lisa's Portfolio",
