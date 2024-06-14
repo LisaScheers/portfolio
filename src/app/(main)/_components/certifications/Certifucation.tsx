@@ -14,15 +14,15 @@ export default function Certification(props: CertificationProps) {
       {props.link ? (
         <Link href={props.link}>
           <p className="text-[#f48fb1] dark:text-[#f48fb1]">
-            issuer: {props.issuer}
+            Issuer: {props.issuer}
           </p>
         </Link>
       ) : (
         <p className="text-[#f48fb1] dark:text-[#f48fb1]">
-          issuer: {props.issuer}
+          Issuer: {props.issuer}
         </p>
       )}
-      <p className="text-[#f48fb1] dark:text-[#f48fb1]">date: {props.date}</p>
+      <p className="text-[#f48fb1] dark:text-[#f48fb1]">Date: {props.date}</p>
       <p className="text-[#f48fb1] dark:text-[#f48fb1]">{props.description}</p>
     </div>
   );
