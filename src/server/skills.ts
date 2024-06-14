@@ -2,5 +2,5 @@ import { cache } from "react";
 import { db } from "./db";
 
 export const getSkills = cache(async () => {
-  return db.query.Skills.findMany();
+  return (await db.query.Skills.findMany()).sort((a, b) => b.level - a.level);
 });
