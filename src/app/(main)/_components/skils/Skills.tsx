@@ -9,16 +9,16 @@ export default function Skills() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter text-[#e91e63] sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter  sm:text-5xl">
               Expertise and Capabilities
             </h2>
-            <p className="max-w-[900px] text-[#f48fb1] dark:text-[#f48fb1] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Lisa&apos;s technical skills and proficiencies that deliver
               exceptional software solutions.
             </p>
           </div>
         </div>
-        <ScrollArea className="h-[50vh] w-full">
+        <ScrollArea className="mt-2 h-[50vh] w-full rounded-lg border-2 border-accent">
           <div className="mx-auto grid max-w-5xl gap-6 py-12 align-top lg:grid-cols-3 lg:gap-12">
             <Suspense fallback={<SkillSuspense />}>
               <SkillList />

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import profileImage from "./profile.png";
+import { Button } from "@/components/ui/button";
 
 export default function Banner() {
   return (
@@ -9,32 +10,26 @@ export default function Banner() {
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter text-[#e91e63] sm:text-5xl xl:text-6xl/none">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                 Lisa Scheers
               </h1>
-              <h2 className="text-xl font-bold text-[#f48fb1] dark:text-[#f48fb1]">
-                Senior Software Developer
-              </h2>
-              <p className="max-w-[600px] text-[#f48fb1] dark:text-[#f48fb1] md:text-xl">
+              <h2 className="text-xl font-bold">Senior Software Developer</h2>
+              <p className="max-w-[600px] md:text-xl">
                 Experienced in C# and .NET, specializing in Domain-Driven Design
                 (DDD) and Clean Architecture. Passionate about building scalable
                 and maintainable software solutions.
               </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link
-                href="/hireme"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-[#e91e63] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#c2185b] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c2185b] disabled:pointer-events-none disabled:opacity-50 dark:bg-[#f48fb1] dark:text-[#1a1a1a] dark:hover:bg-[#f48fb1] dark:focus-visible:ring-[#f48fb1]"
-                prefetch={false}
-              >
-                Hire Me
+            <div className="flex flex-col gap-2 min-[^00px]:flex-row">
+              <Link href="/hireme" prefetch={false}>
+                <Button>Hire Me</Button>
               </Link>
             </div>
           </div>
           <Image
             src={profileImage}
             alt="Hero"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last lg:aspect-square"
+            className="mx-auto aspect-square max-h-[400px] w-auto overflow-hidden rounded-xl object-bottom lg:order-last"
           />
         </div>
       </div>

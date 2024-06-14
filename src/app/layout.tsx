@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <CSPostHogProvider>
       <html lang="en" className={`${GeistSans.variable}`}>
-        <body>{children}</body>
+        <body className="dark:dark">{children}</body>
       </html>
     </CSPostHogProvider>
   );

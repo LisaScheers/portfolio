@@ -5,8 +5,8 @@ import { FlowerIcon } from "lucide-react";
 export default function Layout(props: PropsWithChildren) {
   return (
     <>
-      <div className="flex min-h-[100dvh] flex-col">
-        <header className="flex h-14 items-center bg-[#e91e63] px-4 font-sans text-white lg:px-6">
+      <div className="flex min-h-[100dvh] flex-col ">
+        <header className="y flex h-14 items-center px-4 font-sans  lg:px-6">
           <Link
             href="/"
             className="flex items-center justify-center"

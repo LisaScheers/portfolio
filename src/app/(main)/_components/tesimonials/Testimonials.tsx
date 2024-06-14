@@ -8,10 +8,10 @@ export default function Testimonials() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter text-[#e91e63] sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter  sm:text-5xl">
               What Clients Say
             </h2>
-            <p className="max-w-[900px] text-[#f48fb1] dark:text-[#f48fb1] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Hear from clients who have worked with Lisa Scheers and
               experienced her exceptional software development skills.
             </p>

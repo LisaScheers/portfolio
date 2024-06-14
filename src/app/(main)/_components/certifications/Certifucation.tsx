@@ -1,4 +1,9 @@
-import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 
 type CertificationProps = {
   title: string;
@@ -9,21 +14,17 @@ type CertificationProps = {
 };
 export default function Certification(props: CertificationProps) {
   return (
-    <div className="grid gap-1">
-      <h3 className="text-xl font-bold text-[#e91e63]">{props.title}</h3>
-      {props.link ? (
-        <Link href={props.link}>
-          <p className="text-[#f48fb1] dark:text-[#f48fb1]">
-            Issuer: {props.issuer}
-          </p>
-        </Link>
-      ) : (
-        <p className="text-[#f48fb1] dark:text-[#f48fb1]">
-          Issuer: {props.issuer}
-        </p>
-      )}
-      <p className="text-[#f48fb1] dark:text-[#f48fb1]">Date: {props.date}</p>
-      <p className="text-[#f48fb1] dark:text-[#f48fb1]">{props.description}</p>
-    </div>
+    <Card>
+      <CardHeader>
+        <h3 className="text-lg font-bold ">{props.title}</h3>
+      </CardHeader>
+      <CardContent>
+        <p className="">{props.description}</p>
+      </CardContent>
+      <CardFooter className="justify-between">
+        <div className="block text-xs">Issuer: {props.issuer}</div>
+        <div className="block text-xs">Date: {props.date}</div>
+      </CardFooter>
+    </Card>
   );
 }
