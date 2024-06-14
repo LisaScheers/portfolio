@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 
 import sendGrid from "@sendgrid/mail";
 import { env } from "@/env";
+import { createContact } from "@/server/contacts";
 
 const ContactRequestSchema = z.object({
   token: z.string(),
@@ -20,6 +21,7 @@ export async function submitContactRequest(
 ) {
   await verifyRecaptcha(req.token, "contact");
   sendGrid.setApiKey(env.SENDGRID_API_KEY);
+  await createContact(req);
   await sendGrid.send({
     templateId: "d-720469671a34484288251bc50ed188a7",
     from: "noreply@scheers.tech",

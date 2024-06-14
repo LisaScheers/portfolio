@@ -46,3 +46,11 @@ export const Testimonials = createTable("testimonials", {
   link: text("link"),
   content: text("content").notNull(),
 });
+
+export const Contacts = createTable("contacts.ts", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  message: text("message").notNull(),
+  date: text("date").notNull(),
+});
