@@ -4,6 +4,8 @@ import Certifications from "@/app/(main)/_components/certifications/Certificatio
 import Testimonials from "@/app/(main)/_components/tesimonials/Testimonials";
 import Showcase from "@/app/(main)/_components/Showcase/Showcase";
 
+export const revalidate = 3600;
+
 export default function Component() {
   return (
     <main className="flex-1">

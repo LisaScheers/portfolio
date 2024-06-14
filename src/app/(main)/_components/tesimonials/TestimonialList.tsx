@@ -1,10 +1,8 @@
-import { db } from "@/server/db";
 import Testimonial from "@/app/(main)/_components/tesimonials/testemonial";
-
-export const dynamic = "force-dynamic";
+import { getTestimonials } from "@/server/testimonials";
 
 export default async function TestimonialList() {
-  const testimonials = await db.query.Testimonials.findMany();
+  const testimonials = await getTestimonials();
 
   return (
     <>

@@ -1,8 +1,8 @@
-import { db } from "@/server/db";
 import Certification from "@/app/(main)/_components/certifications/Certifucation";
+import { getCertifications } from "@/server/certifications";
 
 export default async function CertificationList() {
-  const certifications = await db.query.Certifications.findMany();
+  const certifications = await getCertifications();
 
   return (
     <>

@@ -1,10 +1,8 @@
-import { db } from "@/server/db";
 import Case from "@/app/(main)/_components/Showcase/Case";
-
-export const dynamic = "force-dynamic";
+import { getCases } from "@/server/cases";
 
 export default async function ShowcaseList() {
-  const showcases = await db.query.Cases.findMany();
+  const showcases = await getCases();
   return (
     <>
       {showcases.map((showcase) => (
