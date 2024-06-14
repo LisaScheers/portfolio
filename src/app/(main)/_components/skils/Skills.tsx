@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import SkillList from "@/app/(main)/_components/skils/SkillList";
 import SkillSuspense from "@/app/(main)/_components/skils/SkillSuspense";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Skills() {
   return (
@@ -17,11 +18,13 @@ export default function Skills() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl gap-6 py-12 align-top lg:grid-cols-3 lg:gap-12">
-          <Suspense fallback={<SkillSuspense />}>
-            <SkillList />
-          </Suspense>
-        </div>
+        <ScrollArea className="h-[50vh] w-full">
+          <div className="mx-auto grid max-w-5xl gap-6 py-12 align-top lg:grid-cols-3 lg:gap-12">
+            <Suspense fallback={<SkillSuspense />}>
+              <SkillList />
+            </Suspense>
+          </div>
+        </ScrollArea>
       </div>
     </section>
   );
