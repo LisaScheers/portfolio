@@ -35,8 +35,8 @@ export const Certifications = createTable("certifications", {
 
 export const Cases = createTable("cases", {
   id: serial("id").primaryKey(),
-  title: text("title"),
-  description: text("description"),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
 });
 
 export const Testimonials = createTable("testimonials", {

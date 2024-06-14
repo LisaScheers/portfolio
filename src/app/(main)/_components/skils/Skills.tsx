@@ -12,8 +12,8 @@ export default function Skills() {
               Expertise and Capabilities
             </h2>
             <p className="max-w-[900px] text-[#f48fb1] dark:text-[#f48fb1] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Lisa&apos;s technical skills and proficiencies that enable her to
-              deliver exceptional software solutions.
+              Lisa&apos;s technical skills and proficiencies that deliver
+              exceptional software solutions.
             </p>
           </div>
         </div>

@@ -12,8 +12,8 @@ export default function Certifications() {
               Professional Certifications
             </h2>
             <p className="max-w-[900px] text-[#f48fb1] dark:text-[#f48fb1] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Lisa&apos;s professional certifications that demonstrate her
-              expertise and commitment to continuous learning.
+              Lisa&apos;s industry standard certifications, showcasing her
+              expertise and commitment to continuous learning
             </p>
           </div>
         </div>

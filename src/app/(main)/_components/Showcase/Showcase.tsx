@@ -1,4 +1,6 @@
-import Case from "@/app/(main)/_components/Case";
+import { Suspense } from "react";
+import ShowcaseList from "@/app/(main)/_components/Showcase/ShowcaseList";
+import ShowcaseSuspense from "@/app/(main)/_components/Showcase/ShowcaseSuspense";
 
 export default function Showcase() {
   return (
@@ -17,26 +19,9 @@ export default function Showcase() {
         </div>
         <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
           <div className="flex flex-col justify-center space-y-4">
-            <Case
-              title="Govnerment level redundancy and security"
-              description="Developed applications for the Justice department for the Belgian govnerment with a focus on redundancy and security."
-            />
-            <Case
-              title="Microservices Architecture"
-              description=" Designed and implemented a microservices-based architecture
-                using DDD and Clean Architecture principles, enabling
-                scalability and improved fault tolerance."
-            />
-
-            {/*
-                      devider for current projects
-                      
-                      */}
-            <Case
-              title="Modernizing Legacy Systems"
-              description="Modernized legacy systems by refactoring monolithic applications
-                into microservices, improving maintainability and scalability."
-            />
+            <Suspense fallback={<ShowcaseSuspense />}>
+              <ShowcaseList />
+            </Suspense>
           </div>
         </div>
       </div>

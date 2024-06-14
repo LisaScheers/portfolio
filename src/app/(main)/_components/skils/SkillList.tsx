@@ -1,6 +1,8 @@
 import { db } from "@/server/db";
 import Skill from "@/app/(main)/_components/skils/Skill";
 
+export const dynamic = "force-dynamic";
+
 export default async function SkillList() {
   const skills = await db.query.Skills.findMany();
   return (

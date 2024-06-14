@@ -18,6 +18,10 @@ const config = {
       },
     ];
   },
+  experimental: {
+    ppr: true,
+    reactCompiler: true,
+  },
   // This is required to support PostHog trailing slash API requests
   skipTrailingSlashRedirect: true,
 };
