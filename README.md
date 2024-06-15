@@ -1,29 +1,104 @@
-# Create T3 App
+# Portfolio
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Welcome to my personal portfolio project! This project showcases my work, skills, and projects in a modern, responsive design. Built with Next.js using the T3 stack and hosted on Vercel.
 
-## What's next? How do I make an app with this?
+## Table of Contents
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- [About](#about)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## About
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+This portfolio project is developed to provide a comprehensive view of my professional journey, including my skills, projects, and contact information. The portfolio is designed to be fast, responsive, and easy to navigate.
 
-## Learn More
+## Features
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- **Modern Design**: Sleek and professional design to highlight my work.
+- **Responsive Layout**: Optimized for both desktop and mobile viewing.
+- **Project Showcase**: Detailed view of my projects with descriptions and links.
+- **Contact Form**: Easy-to-use contact form for getting in touch.
+- **SEO Friendly**: Optimized for search engines to improve visibility.
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Getting Started
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+### Prerequisites
 
-## How do I deploy this?
+Make sure you have the following installed on your system:
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- Node.js (>= 20.0.0)
+- pnpm (>= 9.3.0)
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/lisascheers/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+### Running the Development Server
+
+To start the development server, run:
+
+```bash
+pnpm dev
+```
+
+Open your browser and navigate to `http://localhost:3000` to see the development version of your portfolio.
+
+## Usage
+
+### Building for Production
+
+To build the project for production, use the following command:
+
+```bash
+pnpm build
+```
+
+### Deployment
+
+This project is hosted on Vercel. To deploy your version of the portfolio, follow these steps:
+
+1. **Sign in to Vercel** and create a new project.
+2. **Import your GitHub repository** and follow the prompts to set up the deployment.
+3. **Set Environment Variables** (if any) in the Vercel dashboard.
+4. **Deploy** your project.
+
+For more detailed instructions, refer to the [Vercel documentation](https://vercel.com/docs).
+
+## Contributing
+
+Contributions are welcome! If you have suggestions or improvements, feel free to submit a pull request or open an issue.
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For any questions, feedback, or just to say hello, you can reach me at:
+
+- **Email**: [lisa@scheers.tech](mailto:lisa@scheers.tech)
+- **LinkedIn**: [Lisa Scheers](https://www.linkedin.com/in/lisascheers)
+- **GitHub**: [lisascheers](https://github.com/lisascheers)
+
+Thank you for visiting my portfolio!
