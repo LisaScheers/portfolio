@@ -35,6 +35,12 @@ export default function Layout(props: PropsWithChildren) {
             >
               linkedin
             </Link>
+            <Link
+              className="text-sm font-medium underline-offset-4 hover:underline"
+              href="https://github.com/LisaScheers/portfolio"
+            >
+              source code on github
+            </Link>
           </nav>
         </header>
         {props.children}
