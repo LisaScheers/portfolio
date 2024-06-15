@@ -18,8 +18,8 @@ export default function Skills() {
             </p>
           </div>
         </div>
-        <ScrollArea className="mt-2 h-[50vh] w-full rounded-lg border-2 border-accent">
-          <div className="mx-auto grid max-w-5xl gap-6 py-12 align-top lg:grid-cols-3 lg:gap-12">
+        <ScrollArea className="mt-2 h-[50vh] w-full rounded-lg border-2 border-accent px-3">
+          <div className=" mx-auto grid max-w-5xl gap-6 py-12 align-top md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
             <Suspense fallback={<SkillSuspense />}>
               <SkillList />
             </Suspense>

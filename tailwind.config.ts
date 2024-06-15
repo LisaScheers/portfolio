@@ -1,13 +1,8 @@
 import type { Config } from "tailwindcss";
 
 const config = {
-  darkMode: [
-    "variant",
-    [
-      "@media (prefers-color-scheme: dark) { &:not(.light *) }",
-      "&:is(.dark *)",
-    ],
-  ],
+  // dark mode based on the system preference
+  darkMode: "media",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",

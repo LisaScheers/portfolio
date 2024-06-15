@@ -31,10 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <CSPostHogProvider>
-      <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en" className={`${GeistSans.variable}`}>
+      <CSPostHogProvider>
         <body className="dark:dark">{children}</body>
-      </html>
-    </CSPostHogProvider>
+      </CSPostHogProvider>
+    </html>
   );
 }

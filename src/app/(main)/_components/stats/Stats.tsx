@@ -9,7 +9,7 @@ export default function Stats() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Statistics
             </h2>
-            <p className="max-w-[900px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Some interesting statistics about my work.
             </p>
           </div>
