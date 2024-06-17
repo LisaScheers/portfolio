@@ -58,6 +58,7 @@
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.4",
     "eslint-plugin-drizzle": "^0.2.3",
+    "eslint-plugin-react": "^7.34.2",
     "husky": "^9.0.11",
     "postcss": "^8.4.38",
     "postcss-sort-media-queries": "^5.2.0",
