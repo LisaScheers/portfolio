@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/LisaScheers/portfolio/compare/v1.1.0...v1.2.0) (2024-06-23)
+
+
+### Features
+
+* **blog:** add blog post functionality with markdown support ([43ce000](https://github.com/LisaScheers/portfolio/commit/43ce0004b9b2036036643398388919ecac148baa))
+* **blog:** add dynamic blog post fetching and metadata generation ([eecb354](https://github.com/LisaScheers/portfolio/commit/eecb3549d1892d85a3592abd9ea44305b115daa6))
+* **blog:** add initial blog structure and components ([dff8b38](https://github.com/LisaScheers/portfolio/commit/dff8b38ea995ed9e9200a2c1b52792370d7c1837))
+
 # [1.1.0](https://github.com/LisaScheers/portfolio/compare/v1.0.0...v1.1.0) (2024-06-17)
 
 
