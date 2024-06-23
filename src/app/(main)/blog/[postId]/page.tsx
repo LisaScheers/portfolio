@@ -88,85 +88,86 @@ export default async function PostPage(props: Props) {
           height={post.imageHeight}
           alt={post.imageAlt}
         />
+        <main>
+          <Markdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+            components={{
+              code({ className, children, ...props }) {
+                const match = /language-(\w+)/.exec((className as never) || "");
 
-        <Markdown
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeRaw]}
-          components={{
-            code({ className, children, ...props }) {
-              const match = /language-(\w+)/.exec((className as never) || "");
-
-              return match ? (
-                <SyntaxHighlighter
-                  /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/ban-ts-comment */
-                  // @ts-expect-error
-                  style={dracula}
-                  PreTag="div"
-                  language={match[1]}
-                  className="w-full text-wrap"
-                  {...props}
-                >
-                  {String(children).replace(/\n$/, "")}
-                </SyntaxHighlighter>
-              ) : (
-                <code className={className as never} {...props}>
-                  {children}
-                </code>
-              );
-            },
-            h1({ children, ...props }) {
-              return (
-                <h1
-                  className="text-4xl font-extrabold tracking-tight lg:text-4xl"
-                  {...props}
-                >
-                  {children}
-                </h1>
-              );
-            },
-            h2({ children, ...props }) {
-              return (
-                <>
-                  <Separator />
-                  <h2
-                    className="text-xl font-bold tracking-tighter sm:text-3xl"
+                return match ? (
+                  <SyntaxHighlighter
+                    /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/ban-ts-comment */
+                    // @ts-expect-error
+                    style={dracula}
+                    PreTag="div"
+                    language={match[1]}
+                    className="w-full text-wrap"
+                    {...props}
+                  >
+                    {String(children).replace(/\n$/, "")}
+                  </SyntaxHighlighter>
+                ) : (
+                  <code className={className as never} {...props}>
+                    {children}
+                  </code>
+                );
+              },
+              h1({ children, ...props }) {
+                return (
+                  <h1
+                    className="text-4xl font-extrabold tracking-tight lg:text-4xl"
                     {...props}
                   >
                     {children}
-                  </h2>
-                </>
-              );
-            },
-            h3({ children, ...props }) {
-              return (
-                <h3
-                  className="text-lg font-bold tracking-tighter sm:text-xl"
-                  {...props}
-                >
-                  {children}
-                </h3>
-              );
-            },
+                  </h1>
+                );
+              },
+              h2({ children, ...props }) {
+                return (
+                  <>
+                    <Separator />
+                    <h2
+                      className="text-xl font-bold tracking-tighter sm:text-3xl"
+                      {...props}
+                    >
+                      {children}
+                    </h2>
+                  </>
+                );
+              },
+              h3({ children, ...props }) {
+                return (
+                  <h3
+                    className="text-lg font-bold tracking-tighter sm:text-xl"
+                    {...props}
+                  >
+                    {children}
+                  </h3>
+                );
+              },
 
-            ul({ children, ...props }) {
-              return (
-                <ul
-                  className="
+              ul({ children, ...props }) {
+                return (
+                  <ul
+                    className="
                  list-disc space-y-1 "
-                  {...props}
-                >
-                  {children}
-                </ul>
-              );
-            },
+                    {...props}
+                  >
+                    {children}
+                  </ul>
+                );
+              },
 
-            li({ children, ...props }) {
-              return <li {...props}>{children}</li>;
-            },
-          }}
-        >
-          {post.content}
-        </Markdown>
+              li({ children, ...props }) {
+                return <li {...props}>{children}</li>;
+              },
+            }}
+          >
+            {post.content}
+          </Markdown>
+        </main>
       </div>
       <div className="h-[100px]"></div>
     </article>
