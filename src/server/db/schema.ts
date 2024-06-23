@@ -1,7 +1,7 @@
 // Example model schema from the Drizzle docs
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
-import {integer, pgTableCreator, serial, text} from "drizzle-orm/pg-core";
+import {boolean, date, integer, pgTableCreator, serial, text,} from "drizzle-orm/pg-core";
 import {env} from "@/env";
 
 /**
@@ -53,4 +53,19 @@ export const Contacts = createTable("contacts.ts", {
   email: text("email").notNull(),
   message: text("message").notNull(),
   date: text("date").notNull(),
+});
+
+export const BlogPosts = createTable("blog_posts", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  author: text("author").notNull(),
+  date: date("date", { mode: "date" }).notNull(),
+  tldr: text("tldr").notNull(),
+  image: text("image").notNull(),
+  imageWidth: integer("imageWidth").notNull(),
+  imageHeight: integer("imageHeight").notNull(),
+  content: text("content").notNull(),
+  isDraft: boolean("isDraft")
+    .notNull()
+    .$default(() => false),
 });
