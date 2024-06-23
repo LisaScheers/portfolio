@@ -1,6 +1,7 @@
 import { db } from "./db";
 import { BlogPosts } from "@/server/db/schema";
 import { eq } from "drizzle-orm/sql";
+import { cache } from "react";
 
 export type BlogPost = {
   id: string;
@@ -16,7 +17,7 @@ export type BlogPost = {
   imageHeight: number;
 };
 
-export const getBlogPosts = async (): Promise<BlogPost[]> => {
+export const getBlogPosts = cache(async (): Promise<BlogPost[]> => {
   return (await db.select().from(BlogPosts)).map((blogPost) => {
     return {
       id: blogPost.id.toString(),
@@ -32,9 +33,9 @@ export const getBlogPosts = async (): Promise<BlogPost[]> => {
       imageHeight: blogPost.imageHeight,
     };
   });
-};
+});
 
-export const getBlogPost = async (id: string): Promise<BlogPost> => {
+export const getBlogPost = cache(async (id: string): Promise<BlogPost> => {
   console.log(id);
   const posts = await db.select().from(BlogPosts).where(eq(BlogPosts.id, +id));
   if (posts.length === 0) {
@@ -59,4 +60,4 @@ export const getBlogPost = async (id: string): Promise<BlogPost> => {
     imageWidth: post.imageWidth,
     imageHeight: post.imageHeight,
   };
-};
+});

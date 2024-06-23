@@ -1,6 +1,6 @@
 import { type PropsWithoutRef } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { getBlogPost } from "@/server/blogService";
+import { getBlogPost, getBlogPosts } from "@/server/blogService";
 
 import "./post.css";
 import Markdown from "react-markdown";
@@ -10,10 +10,49 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import { type Metadata } from "next";
 
-export default async function PostPage(
-  props: PropsWithoutRef<{ params: { postId: string } }>,
-) {
+type Props = PropsWithoutRef<{ params: { postId: string } }>;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const id = params.postId;
+
+  // fetch post from database
+  const post = await getBlogPost(id);
+
+  return {
+    title: post.title,
+    openGraph: {
+      images: [{ url: post.image }],
+      description: post.tldr,
+      title: post.title,
+      locale: "en_US",
+      authors: [post.author],
+      username: post.author,
+      writers: [post.author],
+    },
+    twitter: {
+      site: post.author,
+      title: post.title,
+      description: post.tldr,
+      images: [{ url: post.image }],
+      card: "summary",
+      creator: post.author,
+      creatorId: post.author,
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  const posts = await getBlogPosts();
+
+  return posts.map((post) => ({
+    postId: post.id,
+  }));
+}
+
+export default async function PostPage(props: Props) {
   const post = await getBlogPost(props.params.postId);
 
   return (
@@ -54,12 +93,13 @@ export default async function PostPage(
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
           components={{
-            code({ node, className, children, ...props }: any) {
+            code({ className, children, ...props }) {
               const match = /language-(\w+)/.exec((className as never) || "");
 
               return match ? (
                 <SyntaxHighlighter
-                  /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
+                  /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/ban-ts-comment */
+                  // @ts-expect-error
                   style={dracula}
                   PreTag="div"
                   language={match[1]}
